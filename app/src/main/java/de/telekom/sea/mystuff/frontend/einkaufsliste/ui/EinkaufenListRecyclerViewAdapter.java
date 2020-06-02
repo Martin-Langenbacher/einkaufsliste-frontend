@@ -30,12 +30,25 @@ public class EinkaufenListRecyclerViewAdapter extends RecyclerView.Adapter<Einka
     private static int countOnBindViewHolder = 0;
     private static int countOnCreateViewHolder = 0;
 
+    private NavController navController;
+
     @Getter
     private final List<Item>list;  // final List kann Referenz nicht ändern, da final! --> Inhalt kann geändert werden - trotz final!
 
+
+    public EinkaufenListRecyclerViewAdapter(NavController navController){
+        this.navController = navController;
+        this.list = new ArrayList<>();
+    }
+
+
+
+
+    /* --> alt !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     public EinkaufenListRecyclerViewAdapter(List<Item> list){
         this.list = list;
     }
+    */
 
 
     public void updateList(List<Item> newList){
@@ -61,6 +74,24 @@ public class EinkaufenListRecyclerViewAdapter extends RecyclerView.Adapter<Einka
         Timber.d("-----------------------------------------------------------------> OnBindViewHolder " + countOnBindViewHolder);
         Item item = getList().get(position);
         holder.getBinding().setItem(item);
+
+
+
+
+        // Sprung ... --> actionToDetail
+        holder.binding.getRoot().setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //Log.d("ItemListRecycler", "Click row : ", v);
+                Bundle bundle = new Bundle();  // Bundle ist so etwas wie eine map
+                bundle.putLong("itemId", item.getId());
+                // bundle.putSerializable("item", (Serializable) item); // ???????????????????????????????????????????????????????????????????????????? cast ???
+                //navController.navigate(R.id.actionToDetail, bundle);
+                navController.navigate(R.id.actionToDetail, bundle);
+            }
+        });
+
+
     }
 
 

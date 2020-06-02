@@ -53,28 +53,3 @@ public class ApiResponse<T> {
 
 }
 
-
-
-/*
-
-package de.telekom.sea.mystuff.frontend.android.api;
-
-
-import androidx.annotation.Nullable;
-
-import java.io.IOException;
-
-import retrofit2.Response;
-import timber.log.Timber;
-
-public class ApiResponse<T> {
-
-
-
-
-}
-
-
-
- */
-
