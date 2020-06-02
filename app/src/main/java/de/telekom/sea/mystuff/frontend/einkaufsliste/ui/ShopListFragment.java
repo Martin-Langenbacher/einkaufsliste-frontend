@@ -55,7 +55,8 @@ public class ShopListFragment extends Fragment {
         itemsList = view.findViewById(R.id.rv_items);
         //  --> check the dogsExample:  --> Mayo ==> refreshLayout = findViewById(R.id.refreshRideListLayout);
         viewModel = new ViewModelProvider(this).get(EinkaufenListViewModel.class);                // warum macht man dies so kompliziert? --> ViewModelProvider: der Erzeuger der ViewModel, da die ViewModel kann länger leben als die MainActivity...
-        //viewModel.initWithApplication(getApplication());  // springt in MyStuffViewModel, damit bekomme ich den Context --> Api-Factory sind definiert (Zentraler Bereich, wie ich an meine Dienste komme)Zeile macht:                                           // darum legt man die Daten ab und man holt sie die alte Instanz aus dem Speicher...
+        //viewModel.initWithApplication(getApplication());  // springt in MyStuffViewModel, damit bekomme ich den Context --> Api-Factory sind definiert (Zentraler Bereich, wie ich an meine Dienste komme)Zeile macht:
+        // darum legt man die Daten ab und man holt sie die alte Instanz aus dem Speicher...
 
         // array-list ausgebaut: --> itemListAdapter = new EinkaufenListRecyclerViewAdapter(new ArrayList<>()); // Android kann sehr willkührlich sein.
 

@@ -1,15 +1,11 @@
 package de.telekom.sea.mystuff.frontend.einkaufsliste.ui;
 
-import android.app.Application;
-import android.content.Context;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.lifecycle.ViewModelProviders;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -21,7 +17,6 @@ import de.telekom.sea.mystuff.frontend.einkaufsliste.R;
 import de.telekom.sea.mystuff.frontend.einkaufsliste.api.ApiFactory;
 import de.telekom.sea.mystuff.frontend.einkaufsliste.api.ItemApi;
 import de.telekom.sea.mystuff.frontend.einkaufsliste.databinding.FragmentShopDetailBinding;
-import de.telekom.sea.mystuff.frontend.einkaufsliste.model.Item;
 import de.telekom.sea.mystuff.frontend.einkaufsliste.repo.ItemRepo;
 
 
@@ -34,11 +29,6 @@ public class ShopDetailFragment extends Fragment {
     public static ShopDetailFragment newInstance(){
         return new ShopDetailFragment();
     }
-    /*
-    public ShopDetailFragment() {
-        // Required empty public constructor
-    }      */
-
 
 
     @Override

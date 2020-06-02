@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/itemLayout">
 
     <data>
@@ -8,8 +10,7 @@
             type="de.telekom.sea.mystuff.frontend.einkaufsliste.model.Item" />
     </data>
 
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
-        xmlns:tools="http://schemas.android.com/tools"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ui.ShopDetailsFragment">
@@ -55,46 +56,28 @@
             app:layout_constraintStart_toEndOf="@id/item_name"
             app:layout_constraintTop_toTopOf="@id/item_name" />
 
-        <TextView
-            android:id="@+id/label_location"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="16dp"
-            android:text="Location"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_name" />
-
-        <EditText
-            android:id="@+id/item_location"
-            android:layout_width="150dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="8dp"
-            android:ems="10"
-            android:inputType="textPersonName"
-            android:text="@{item.name}"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/label_location" />
 
         <TextView
             android:id="@+id/label_lastBought"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Last Used"
-            app:layout_constraintStart_toStartOf="@id/item_lastBought"
-            app:layout_constraintTop_toTopOf="@id/label_location" />
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:text="Last Bought"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/item_name" />
 
         <EditText
             android:id="@+id/item_lastBought"
-            android:layout_width="100dp"
+            android:layout_width="340dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="date"
             android:text="@{item.lastBought.toString()}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/item_location"
-            app:layout_constraintTop_toTopOf="@id/item_location" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/label_lastBought" />
 
 
         <EditText
@@ -117,9 +100,9 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20dp"
             android:layout_marginTop="16dp"
-            android:text="Description"
+            android:text="Additional Remark"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/item_location" />
+            app:layout_constraintTop_toBottomOf="@id/item_lastBought" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

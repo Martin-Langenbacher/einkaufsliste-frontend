@@ -112,9 +112,6 @@ public class EinkaufenListRecyclerViewAdapter extends RecyclerView.Adapter<Einka
             this.binding = binding;
         }
     }
-
-
-
 }
 
 
