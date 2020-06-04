@@ -15,7 +15,7 @@ public class EinkaufenListViewModel extends ViewModel {
 
     // Ohne ...Context, ....
     public LiveData<ApiResponse<List<Item>>> getMyItems(){
-        ApiFactory apiFactory = new ApiFactory();
+        ApiFactory apiFactory = ApiFactory.getInstance();
         ItemApi itemApi = apiFactory.createApi(ItemApi.class); // Hier erzeuge ich das itemApi
         //ItemRepo itemRepo = new ItemRepo(itemApi);
         //return itemRepo.getAll();
@@ -25,20 +25,3 @@ public class EinkaufenListViewModel extends ViewModel {
 }
 
 
-
-// NICHT mit MYStuff ViewMOdel...
-
-/*
-
-
-
-public class ItemListViewModel extends MyStuffViewModel {
-
-    public LiveData<ApiResponse<List<Item>>> getMyItems(){
-        return getMyStuffContext().getItemRepo().getAll();
-    }
-
-}
-
-
- */

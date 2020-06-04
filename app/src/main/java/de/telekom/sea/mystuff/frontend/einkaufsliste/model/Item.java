@@ -15,7 +15,7 @@ public class Item {
     private String name;
     private int amount;
     private String remark;
-    private Date lastBought;
+    private Date lastBought = new Date();
     private boolean needed;
 
 }

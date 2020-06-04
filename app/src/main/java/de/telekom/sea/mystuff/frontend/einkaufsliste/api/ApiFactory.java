@@ -13,14 +13,16 @@ import retrofit2.converter.scalars.ScalarsConverterFactory;
 
 public class ApiFactory {
 
+    private static ApiFactory instance;
+
     @Getter
     private final String baseRestUrl;
     private final String hostName;
     private final Retrofit retrofit;
     private final OkHttpClient okHttpClient;
 
-
-    public ApiFactory() {
+    // constructor
+    private ApiFactory() {
         this.hostName = BuildConfig.APIFACTORY_HOSTNAME;
         this.baseRestUrl = BuildConfig.APIFACTORY_PROTOCOL + "://" + this.hostName + ":" + BuildConfig.APIFACTORY_PORT;
 
@@ -44,6 +46,21 @@ public class ApiFactory {
                 .build();
     }
 
+
+    // methoden  --> Singleton-Pattern
+    public static ApiFactory getInstance(){
+        if (instance == null){
+            instance = new ApiFactory();
+        }
+        return instance;
+    }
+    // mit private ApiFactory kann nur hier die Factory erstellt werden.
+
+
+
+
+
+
     /**
      * @param retrofitApiInterface defines the REST interface, must not be null
      * @param <S>
@@ -52,6 +69,8 @@ public class ApiFactory {
     public <S> S createApi(Class<S> retrofitApiInterface) {
         return retrofit.create(retrofitApiInterface);
     }
+
+
 
 }
 

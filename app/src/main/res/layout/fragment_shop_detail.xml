@@ -5,6 +5,8 @@
     android:id="@+id/itemLayout">
 
     <data>
+        <import type="android.text.format.DateFormat" />
+        <import type="java.text.SimpleDateFormat" />
         <variable
             name="item"
             type="de.telekom.sea.mystuff.frontend.einkaufsliste.model.Item" />
@@ -75,7 +77,7 @@
             android:layout_marginTop="8dp"
             android:ems="10"
             android:inputType="date"
-            android:text="@{item.lastBought.toString()}"
+            android:text='@{item.lastBought != null ? DateFormat.format("dd.MM.yyyy", item.lastBought): ""}'
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/label_lastBought" />
 
@@ -109,4 +111,9 @@
 </layout>
 
 
+<!-- DateFormat...
+https://developer.android.com/reference/android/text/format/DateFormat#format(java.lang.CharSequence,%20java.util.Calendar)
 
+
+https://stackoverflow.com/questions/52535708/format-friendly-date-using-android-databinding-approach
+-->

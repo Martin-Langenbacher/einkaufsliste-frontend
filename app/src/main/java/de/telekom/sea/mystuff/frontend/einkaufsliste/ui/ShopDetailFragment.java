@@ -57,7 +57,8 @@ public class ShopDetailFragment extends Fragment {
         //Context einkaufenContext = application.getBaseContext().getApplicationContext();
 
 
-        ApiFactory apiFactory = new ApiFactory();
+        // alt: ApiFactory apiFactory = new ApiFactory();
+        ApiFactory apiFactory = ApiFactory.getInstance();
         ItemRepo itemRepo = new ItemRepo(apiFactory.createApi(ItemApi.class));
 
         itemRepo.getById(itemId).observe(this.getViewLifecycleOwner(), itemApiResponse -> {
